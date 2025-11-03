@@ -25,6 +25,9 @@ returns = pd.DataFrame({
 Answer:
 
 ```python
+correlation = returns['MSFT'].corr(returns['IBM'])
+
+print("Correlation between MSFT and IBM returns:", correlation)
 
 ```
 
@@ -45,7 +48,11 @@ df = pd.DataFrame({
 Answer:
 
 ```python
+# Convert columns B and C from wide to long format
+df_long = pd.melt(df, id_vars=['A'], value_vars=['B', 'C'],
+                  var_name='variable', value_name='value')
 
+print(df_long)
 ```
 
 ### Question 3
@@ -63,7 +70,10 @@ data = pd.Series(np.random.rand(len(dates)), index=dates)
 Answer:
 
 ```python
+# Slice the Series from 5th to 15th January
+sliced_data = data['2023-01-05':'2023-01-15']
 
+print(sliced_data)
 ```
 
 ## Submission
